@@ -1,0 +1,13 @@
+# 测试
+**/*.css
+/src/components/icons/*
+
+/dist/*
+.local
+.output.js
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+/public/*
