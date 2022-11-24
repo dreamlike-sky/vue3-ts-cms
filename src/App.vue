@@ -1,10 +1,20 @@
-<script setup lang="ts">
+<script lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import { useCounterStore } from '@/stores/counter'
+import { defineComponent } from 'vue'
+export default defineComponent({
+  setup() {
+    const counterName = useCounterStore()
+    return {
+      counterName
+    }
+  }
+})
 </script>
 
 <template>
-  <header>
+  <!-- <header>
     <img
       alt="Vue logo"
       class="logo"
@@ -21,13 +31,28 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-  </header>
+  </header> -->
+
+  <div class="app">
+    <h2>{{ counterName.name }}</h2>
+    <RouterLink to="/login">登录</RouterLink>
+    <RouterLink to="/main">首页</RouterLink>
+    <el-button>按钮</el-button>
+    <el-button type="primary">按钮</el-button>
+    <el-button type="success">按钮</el-button>
+    <i-ep-add-location />
+  </div>
 
   <RouterView />
 </template>
 
 <style scoped>
-header {
+/* .app {
+  width: 100%;
+  height: 100%;
+} */
+
+/* header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -87,5 +112,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>

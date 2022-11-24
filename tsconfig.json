@@ -1,13 +1,68 @@
 {
+  // 配置tsconfig.json基本配置文件的继承配置文件
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  // 指定被编译文件所在的目录，相对于tsconfig.json文件的目录
+  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*"],
+  // 指定需要排除编译的文件
+  "exclude": ["node_modules", "src/service/axios-demo.ts"],
   "compilerOptions": {
-    "baseUrl": ".",
+    // 允许无法访问的代码：undefined(默认)
+    "allowSyntheticDefaultImports": true,
+    // 允许未使用的标签：undefined(默认)
+    "allowUnusedLabels": true,
+    // 允许使用严格模式：false(默认)
+    "alwaysStrict": true,
+    // 精确可选属性类型
+    "exactOptionalPropertyTypes": false,
+    // 开启所有的严格检查选项，会影响其他的严格检查模式，例如：alwaysStrict
+    "strict": true,
+    // 解析文件目录所在的基本路径
+    "baseUrl": "./",
+    // 指定编译后代码使用的模块化规范(CommonJS|AMD|UMD|System|ES2015/ES6|ES2020|ES2022|ESNext|node16/nodenext)
+    "module": "ESNext",
+    // 指定模块解析策略
+    "moduleResolution": "Node",
+    // 路径的映射设置，意思是在你使用 @/* 的时候会默认去 src/* 去找
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+      "@/views/*": ["./src/views/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/assets/*": ["./src/assets/*"]
+    },
+    // 解析JSON模块
+    "resolveJsonModule": true,
+    // 指定需要包含的模块，并将其包含在全局范围内
+    "types": [
+      "vite/client",
+      "element-plus/global",
+      "node"
+    ],
+    // 生成相应的源映射的文件
+    "sourceMap": true,
+    // 指定JSX代码生成用于的开发环境，在支持TSX时联合"jsxFactory": "h"和"jsxFragmentFactory": "Fragment"使用
+    "jsx": "preserve",
+    // 更改使用经典JSX运行时编译JSX元素时所在.js文件中调用的函数，
+    // 如果使用preact，最常见的更改是使用“h”或“preact.h”，而不是默认的“React.createElement”
+    "jsxFactory": "h",
+    // 指定JSX片段工厂函数，以便在指定了jsxFactory编译器选项以响应JSX发出时使用
+    "jsxFragmentFactory": "Fragment",
+    // 辅助的导入
+    "importHelpers": true,
+    // 指定项目运行时使用的库(ES5|ES2015/ES6|ES2016/ES7|ES2017|ES2018|ES2019|ES2020|ES2021|ESNext|DOM|WebWorker|ScriptHost)
+    "lib": ["ESNext", "WebWorker", "DOM"],
+    // 指定ts编译成ES的最新版本
+    "target": "ESNext",
+    // 给即将推出的类字段标准版本提供兼容
+    "useDefineForClassFields": true,
+    // 跳过声明文件的类型检查，编译期间以牺牲类型系统准确性为代价来节省时间
+    "skipLibCheck": true,
+    // 是否将每个文件转换为单独的模块，关联 "skipLibCheck": true 选项
+    "isolatedModules": true,
+    // 是否为所有导入模块创建命名空间对象，关联 "useDefineForClassFields": true 选项
+    // export default/module.exports = {}
+    "esModuleInterop": true,
   },
-
+  // 项目引用，它允许将TS程序组织成更小的部分
   "references": [
     {
       "path": "./tsconfig.config.json"
