@@ -44,3 +44,4 @@ npm run build
 ```sh
 npm run lint
 ```
+集成了编码风格editorconfig配置、代码格式化工具prettier配置、代码检测规范ESLint配置、代码提交前的校验和修复gitHusky配置、代码提交信息的规范Commitizen配置、tconfig.json和vite.config.ts文件配置、VueRouter、Pinia、Axios、ElementPlus等基础环境。

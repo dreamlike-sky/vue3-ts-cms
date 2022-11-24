@@ -32,8 +32,14 @@ class ServiceRequest {
     // this.instance.interceptors.request.use()
     // 使用拦截器
     // 1.从 config 中取出的拦截器是对应的实例的拦截器
-    this.instance.interceptors.request.use(this.interceptors?.requestInterceptor, this.interceptors?.requestInterceptorCatch)
-    this.instance.interceptors.response.use(this.interceptors?.responseInterceptor, this.interceptors?.responseInterceptorCatch)
+    this.instance.interceptors.request.use(
+      this.interceptors?.requestInterceptor,
+      this.interceptors?.requestInterceptorCatch
+    )
+    this.instance.interceptors.response.use(
+      this.interceptors?.responseInterceptor,
+      this.interceptors?.responseInterceptorCatch
+    )
     // 2.添加所有的实例都有的拦截器
     this.instance.interceptors.request.use(
       (config) => {
