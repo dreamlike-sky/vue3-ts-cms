@@ -2,7 +2,7 @@
   // 配置tsconfig.json基本配置文件的继承配置文件
   "extends": "@vue/tsconfig/tsconfig.web.json",
   // 指定被编译文件所在的目录，相对于tsconfig.json文件的目录
-  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*"],
+  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*", "src/**/*.d.ts", "src/**/*.tsx"],
   // 指定需要排除编译的文件
   "exclude": ["node_modules", "src/service/axios-demo.ts"],
   "compilerOptions": {
@@ -24,10 +24,11 @@
     "moduleResolution": "Node",
     // 路径的映射设置，意思是在你使用 @/* 的时候会默认去 src/* 去找
     "paths": {
-      "@/*": ["./src/*"],
-      "@/views/*": ["./src/views/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/assets/*": ["./src/assets/*"]
+      "@/*": ["./src/*"]
+      // "@/views/*": ["./src/views/*"],
+      // "@/components/*": ["./src/components/*"],
+      // "@/assets/*": ["./src/assets/*"],
+      // "@/utils/*": ["./src/utils/*"]
     },
     // 解析JSON模块
     "resolveJsonModule": true,

@@ -1,19 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import localcache from '@/utils/cache'
+import { fistMenu } from '@/utils/map-menus'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/login'
+    redirect: '/main'
   },
   {
     path: '/login',
-    component: () => import('@/views/login/loginView.vue')
+    name: 'login',
+    component: () => import('@/views/login/login.vue')
   },
   {
     path: '/main',
-    component: () => import('@/views/main/mainView.vue')
+    name: 'main',
+    component: () => import('@/views/main/main.vue')
+    // children: [] --> 根据 userMenus 来决定
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('@/views/not-found/not-found.vue')
   }
 ]
 
@@ -36,6 +45,21 @@ const router = createRouter({
   //     component: () => import('../views/AboutView.vue')
   //   }
   // ]
+})
+
+// 导航守卫
+router.beforeEach((to) => {
+  if (to.path !== '/login') {
+    const token = localcache.getCache('token')
+    if (!token) {
+      return '/login'
+    }
+    // console.log(router.getRoutes())
+    // console.log(to)
+    if (to.path === '/main') {
+      return fistMenu.url
+    }
+  }
 })
 
 export default router

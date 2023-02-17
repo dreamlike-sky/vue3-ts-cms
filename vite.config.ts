@@ -53,7 +53,16 @@ export default defineConfig({
         })
       ],
       // 自动注册到目标文件
-      dts: 'src/components.d.ts'
+      dts: 'src/components.d.ts',
+      // 只为全局组件注册类型
+      types: [
+        {
+          from: 'vue-router',
+          names: ['RouterLink', 'RouterView']
+        }
+      ],
+      // 包含的文件后缀名
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/]
     }),
     Icons({
       // 检测到使用时自动安装图标源程序包
@@ -67,12 +76,13 @@ export default defineConfig({
     // }
     alias: {
       // 设置 @ 指向 src 目录
-      '@': resolve('./src'),
+      '@': resolve('./src')
       // 设置 views 指向 ./src/views 目录
-      views: resolve('./src/views'),
-      components: resolve('./src/components'),
-      assets: resolve('./src/assets')
+      // views: resolve('./src/views'),
+      // components: resolve('./src/components')
     }
+    // 省略文件后缀
+    // extensions: [".js", ".ts", ".json", ".jsx", ".tsx"]
   },
   // 开启 server 服务
   server: {
@@ -85,8 +95,8 @@ export default defineConfig({
     // 为开发服务器配置自定义代理规则
     proxy: {
       '/api': {
-        // 后台服务地址
-        target: 'http://127.0.0.1:3000',
+        // 后台服务地址(http://152.136.185.210:4000)
+        target: 'http://152.136.185.210:5000',
         // 允许不同源
         changeOrigin: true,
         // 支持https

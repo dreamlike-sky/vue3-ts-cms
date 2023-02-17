@@ -1,0 +1,27 @@
+import type { DescriptionProp } from '@/base-ui/descriptions'
+export const devDependencies: DescriptionProp[] = [
+  { name: 'typescript', description: '~4.7.4' },
+  { name: 'vite', description: '^3.1.8' },
+  { name: 'eslint', description: '^8.22.0' },
+  { name: 'husky', description: '^8.0.0' },
+  { name: '@commitlint/cli', description: '^17.2.0' },
+  { name: '@commitlint/config-conventional', description: '^17.2.0' },
+  { name: '@types/node', description: '^16.18.3' },
+  { name: '@vitejs/plugin-vue', description: '^3.1.2' },
+  { name: '@vitejs/plugin-vue-jsx', description: '^2.0.1' },
+  { name: '@vue/eslint-config-prettier', description: '^7.0.0' },
+  { name: '@vue/eslint-config-typescript', description: '^11.0.0' },
+  { name: '@vue/tsconfig', description: '^0.1.3' },
+  { name: 'commitizen', description: '^4.2.5' },
+  { name: 'cz-conventional-changelog', description: '3.3.0' },
+  { name: 'eslint-plugin-vue', description: '^9.3.0' },
+  { name: 'vite-plugin-require-transform', description: '^1.0.4' },
+  { name: 'vue-tsc', description: '^1.0.8' },
+  { name: 'prettier', description: '^2.7.1' },
+  { name: '@iconify-json/ep', description: '^1.1.8' },
+  { name: '@rushstack/eslint-patch', description: '^1.1.4' },
+  { name: 'cz-conventional-changelog', description: '^3.3.0' },
+  { name: 'unplugin-auto-import', description: '^0.11.4' },
+  { name: 'unplugin-icons', description: '^0.14.13' },
+  { name: 'unplugin-vue-components', description: '^0.22.9' }
+]

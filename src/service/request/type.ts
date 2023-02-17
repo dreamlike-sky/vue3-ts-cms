@@ -16,4 +16,5 @@ export interface ServiceRequestInterceptors<T = AxiosResponse> {
 export interface ServiceRequestConfig<T = AxiosResponse> extends AxiosRequestConfig {
   interceptors?: ServiceRequestInterceptors<T>
   showLoading?: boolean
+  headers?: any
 }
