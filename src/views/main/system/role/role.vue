@@ -1,10 +1,10 @@
 <script lang="ts">
 import { defineComponent, computed, ref, nextTick } from 'vue'
-import pageSearch from '@/components/page-search'
+import PageSearch from '@/components/page-search'
 import { searchFormConfig } from './config/search.config'
-import pageContent from '@/components/page-content'
+import PageContent from '@/components/page-content'
 import { contentTableConfig } from './config/content.config'
-import pageModal from '@/components/page-modal'
+import PageModal from '@/components/page-modal'
 import { modalConfig } from './config/modal.config'
 import { usePageModal } from '@/hooks/use-page-modal'
 import useStore from '@/stores'
@@ -14,9 +14,9 @@ import type { ElTree } from 'element-plus'
 export default defineComponent({
   name: 'role',
   components: {
-    pageSearch,
-    pageContent,
-    pageModal
+    PageSearch,
+    PageContent,
+    PageModal
   },
   setup() {
     const elTreeRef = ref<InstanceType<typeof ElTree>>()

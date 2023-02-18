@@ -1,11 +1,11 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import navMenu from '@/components/nav-menu'
-import navHeader from '@/components/nav-header'
+import NavMenu from '@/components/nav-menu'
+import NavHeader from '@/components/nav-header'
 export default defineComponent({
   components: {
-    navMenu,
-    navHeader
+    NavMenu,
+    NavHeader
   },
   setup() {
     const isCollapse = ref(false)

@@ -1,12 +1,12 @@
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue'
-import userForm from '@/base-ui/form'
+import UserForm from '@/base-ui/form'
 // import useStore from 'vuex' // Vuex
 import systemStore from '@/stores/main/system/system'
 
 export default defineComponent({
   components: {
-    userForm
+    UserForm
   },
   props: {
     modalConfig: {

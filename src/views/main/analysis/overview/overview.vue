@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import card from '@/base-ui/card'
-import textLink from '@/base-ui/text-link'
+import Card from '@/base-ui/card'
+import TextLink from '@/base-ui/text-link'
 import {
   technologyStacks,
   dependencies,
@@ -11,16 +11,16 @@ import {
   cpnStandard,
   gitStandard
 } from './config'
-import descriptions from '@/base-ui/descriptions'
-import projectTree from '@/base-ui/project-tree'
+import Descriptions from '@/base-ui/descriptions'
+import ProjectTree from '@/base-ui/project-tree'
 
 export default defineComponent({
   name: 'overview',
   components: {
-    card,
-    textLink,
-    descriptions,
-    projectTree
+    Card,
+    TextLink,
+    Descriptions,
+    ProjectTree
   },
   setup() {
     return {

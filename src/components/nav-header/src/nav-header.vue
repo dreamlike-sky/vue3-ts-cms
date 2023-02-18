@@ -1,15 +1,15 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue'
-import userInfo from '@/components/nav-header/src/user-info.vue'
-import headerBreadcrumb from '@/base-ui/breadcrumb'
+import UserInfo from '@/components/nav-header/src/user-info.vue'
+import HeaderBreadcrumb from '@/base-ui/breadcrumb'
 import loginStore from '@/stores/login/login'
 import { useRoute } from 'vue-router'
 import { pathMapBreadcrumbs } from '@/utils/map-menus'
 
 export default defineComponent({
   components: {
-    userInfo,
-    headerBreadcrumb
+    UserInfo,
+    HeaderBreadcrumb
   },
   emits: ['foldChange'],
   setup(props, { emit }) {

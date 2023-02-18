@@ -1,3 +1,3 @@
-import textLink from './src/text-link.vue'
+import TextLink from './src/text-link.vue'
 
-export default textLink
+export default TextLink

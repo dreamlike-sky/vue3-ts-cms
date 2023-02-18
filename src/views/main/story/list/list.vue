@@ -1,12 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import pageContent from '@/components/page-content'
+import PageContent from '@/components/page-content'
 import { contentTableConfig } from './config/content.config'
 
 export default defineComponent({
   name: 'list',
   components: {
-    pageContent
+    PageContent
   },
   setup() {
     return {

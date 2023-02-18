@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import baseEchart from '@/base-ui/echart'
+import BaseEchart from '@/base-ui/echart'
 // import type { EChartsOption } from 'echarts'
 import type { IDataType } from '@/components/page-echarts/types'
 
@@ -9,7 +9,7 @@ const props = defineProps<{
 }>()
 
 // const options: EChartsOption = {
-const options = computed(() => {
+const options: any = computed(() => {
   return {
     /*
     title: {

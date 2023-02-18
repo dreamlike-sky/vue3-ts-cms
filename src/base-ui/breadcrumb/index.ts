@@ -1,5 +1,5 @@
-import headerBreadcrumb from './src/breadcrumb.vue'
+import HeaderBreadcrumb from './src/breadcrumb.vue'
 
 export * from './types'
 
-export default headerBreadcrumb
+export default HeaderBreadcrumb

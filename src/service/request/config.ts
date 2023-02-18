@@ -37,8 +37,10 @@ if (process.env.NODE_ENV === 'development') {
   // BASE_URL = 'http://localhost:3000'
   BASE_URL = '/api'
 } else if (process.env.NODE_ENV === 'production') {
-  BASE_URL = 'http://baidu.com/prod'
+  // BASE_URL = 'http://baidu.com/prod'
+  BASE_URL = '/api'
 } else {
-  BASE_URL = 'http://baidu.com/test'
+  // BASE_URL = 'http://baidu.com/test'
+  BASE_URL = '/api'
 }
 export { BASE_URL, TIME_OUT }

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import baseEchart from '@/base-ui/echart'
+import BaseEchart from '@/base-ui/echart'
 import type { IDataType } from '@/components/page-echarts/types'
 
 const props = defineProps<{
@@ -19,7 +19,7 @@ const props = defineProps<{
 '#9a60b4',
 '#ea7ccc'
 */
-const options = computed(() => {
+const options: any = computed(() => {
   return {
     legend: { top: 'bottom' },
     toolbox: {

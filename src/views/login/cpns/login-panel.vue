@@ -1,17 +1,17 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import loginAccount from './login-account.vue'
-import loginPhone from './login-phone.vue'
+import LoginAccount from './login-account.vue'
+import LoginPhone from './login-phone.vue'
 export default defineComponent({
   components: {
-    loginAccount,
-    loginPhone
+    LoginAccount,
+    LoginPhone
   },
   setup() {
     // 1.定义属性
     const isKeepPassword = ref(true)
-    const accountRef = ref<InstanceType<typeof loginAccount>>()
-    const phoneRef = ref<InstanceType<typeof loginPhone>>()
+    const accountRef = ref<InstanceType<typeof LoginAccount>>()
+    const phoneRef = ref<InstanceType<typeof LoginPhone>>()
     const currentTab = ref('account')
 
     // 2.定义方法

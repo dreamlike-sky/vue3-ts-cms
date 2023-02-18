@@ -1,10 +1,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import countUp from '@/base-ui/count-up'
+import CountUp from '@/base-ui/count-up'
 
 export default defineComponent({
   components: {
-    countUp
+    CountUp
   },
   props: {
     panelData: {

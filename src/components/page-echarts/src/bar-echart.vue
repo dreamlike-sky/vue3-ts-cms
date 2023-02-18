@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import * as echarts from 'echarts'
-import baseEchart from '@/base-ui/echart'
+import BaseEchart from '@/base-ui/echart'
 
 const props = defineProps<{
   title?: string
@@ -9,7 +9,7 @@ const props = defineProps<{
   values: any[]
 }>()
 
-const options = computed(() => {
+const options: any = computed(() => {
   return {
     title: { text: props.title },
     tooltip: { trigger: 'item' },
@@ -62,7 +62,7 @@ const options = computed(() => {
 
 <template>
   <div class="bar-echart">
-    <base-echart :options="options"></base-echart>
+    <base-echart :options="options" />
   </div>
 </template>
 

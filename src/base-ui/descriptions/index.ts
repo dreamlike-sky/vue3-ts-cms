@@ -1,5 +1,5 @@
-import descriptions from './src/descriptions.vue'
+import Descriptions from './src/descriptions.vue'
 import type { DescriptionProp } from './types'
 
-export default descriptions
+export default Descriptions
 export { DescriptionProp }

@@ -1,3 +1,3 @@
-import countUp from './src/count-up.vue'
+import CountUp from './src/count-up.vue'
 
-export default countUp
+export default CountUp

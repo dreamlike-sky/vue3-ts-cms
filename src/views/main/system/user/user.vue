@@ -6,20 +6,20 @@ import { defineComponent, computed } from 'vue' // pageContent
 // import UserForm, { type IForm } from '@/base-ui/form'
 // import userForm from '@/base-ui/form' // pageSearch-
 import { searchFormConfig } from './config/search.config'
-import pageSearch from '@/components/page-search'
+import PageSearch from '@/components/page-search'
 
 // import { useStore } from 'vuex' // Vuex
 // import { useStore } from '@/store' // Vuex
 // import systemStore from '@/stores/main/system/system' // Pinia pageContent
 // import userTable from '@/base-ui/table' // --
 import { contentTableConfig } from './config/content.config'
-import pageContent from '@/components/page-content'
+import PageContent from '@/components/page-content'
 
 import { usePageSearch } from '@/hooks/use-page-search'
 
 // import userForm from '@/base-ui/form' // pageModal
 import { modalConfig } from './config/modal.config'
-import pageModal from '@/components/page-modal'
+import PageModal from '@/components/page-modal'
 import { usePageModal } from '@/hooks/use-page-modal'
 import useStore from '@/stores'
 
@@ -28,11 +28,11 @@ export default defineComponent({
   components: {
     // userForm
 
-    pageSearch,
+    PageSearch,
     // userTable
-    pageContent,
+    PageContent,
     // userForm // pageModal
-    pageModal
+    PageModal
   },
   setup() {
     /*

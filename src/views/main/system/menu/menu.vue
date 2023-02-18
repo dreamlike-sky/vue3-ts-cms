@@ -1,8 +1,8 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import pageContent from '@/components/page-content'
+import PageContent from '@/components/page-content'
 import { contentTableConfig } from './config/content.config'
-import pageModal from '@/components/page-modal'
+import PageModal from '@/components/page-modal'
 import { modalConfig } from './config/modal.config'
 import useStore from '@/stores'
 import { usePageModal } from '@/hooks/use-page-modal'
@@ -10,8 +10,8 @@ import { usePageModal } from '@/hooks/use-page-modal'
 export default defineComponent({
   name: 'menu-management',
   components: {
-    pageContent,
-    pageModal
+    PageContent,
+    PageModal
   },
   setup() {
     const store = useStore()

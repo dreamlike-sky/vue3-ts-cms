@@ -1,3 +1,3 @@
-import projectTree from './src/project-tree.vue'
+import ProjectTree from './src/project-tree.vue'
 
-export default projectTree
+export default ProjectTree

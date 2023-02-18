@@ -1,3 +1,3 @@
-import boxCard from './src/card.vue'
+import BoxCard from './src/card.vue'
 
-export default boxCard
+export default BoxCard

@@ -9,22 +9,22 @@ import { defineComponent, computed } from 'vue'
 import boxCard from '@/base-ui/card'
 // import baseEchart from '@/base-ui/echart'
 // import type { EChartsOption } from 'echarts'
-import { pieEchart, roseEchart, lineEchart, barEchart, mapEchart } from '@/components/page-echarts'
+import { PieEchart, RoseEchart, LineEchart, BarEchart, MapEchart } from '@/components/page-echarts'
 // import { useStore } from 'vuex' // Vuex
 import dashboardStore from '@/stores/main/analysis/dashboard'
-import statisticalPanel from '@/components/statistical-panel'
+import StatisticalPanel from '@/components/statistical-panel'
 
 export default defineComponent({
   name: 'dashboard',
   components: {
     boxCard,
     // baseEchart
-    pieEchart,
-    roseEchart,
-    lineEchart,
-    barEchart,
-    mapEchart,
-    statisticalPanel
+    PieEchart,
+    RoseEchart,
+    LineEchart,
+    BarEchart,
+    MapEchart,
+    StatisticalPanel
   },
   setup() {
     // echarts 使用小案例

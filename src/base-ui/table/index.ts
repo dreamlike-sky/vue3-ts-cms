@@ -1,3 +1,3 @@
-import userTable from './src/table.vue'
+import UserTable from './src/table.vue'
 
-export default userTable
+export default UserTable

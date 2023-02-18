@@ -126,30 +126,26 @@ export default defineConfig({
     terserOptions: {
       //打包后移除console和注释
       compress: {
-        drop_console: false,
-        drop_debugger: false,
+        drop_console: true,
+        drop_debugger: true,
         pure_funcs: ['console.log']
       },
       format: {
         // 删除注释
-        comments: false
+        comments: true
+      }
+    },
+    // 指定生成静态资源的存放路径(相对于 build.outDir)：assets(默认)
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        // 分解大块js,
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString()
+          }
+        }
       }
     }
-    // 指定生成静态资源的存放路径(相对于 build.outDir)：assets(默认)
-    // assetsDir: 'assets',
-    // rollupOptions: {
-    //   output: {
-    //     // 分解大块js,
-    //     manualChunks(id) {
-    //       if (id.includes('node_modules')) {
-    //         return id
-    //           .toString()
-    //           .split('node_modules/')[1]
-    //           .split('/')[0]
-    //           .toString()
-    //       }
-    //     }
-    //   }
-    // }
   }
 })

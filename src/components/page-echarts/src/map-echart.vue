@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import baseEchart from '@/base-ui/echart'
+import BaseEchart from '@/base-ui/echart'
 import type { IDataType } from '@/components/page-echarts/types'
 import { convertData } from '@/components/page-echarts/utils/convert-data'
 
@@ -9,7 +9,7 @@ const props = defineProps<{
   mapData: IDataType[]
 }>()
 
-const options = computed(() => {
+const options: any = computed(() => {
   return {
     backgroundColor: '#fff',
     title: {

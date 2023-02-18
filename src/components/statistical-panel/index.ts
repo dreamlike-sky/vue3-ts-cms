@@ -1,3 +1,3 @@
-import statisticalPanel from './src/statistical-panel.vue'
+import StatisticalPanel from './src/statistical-panel.vue'
 
-export default statisticalPanel
+export default StatisticalPanel

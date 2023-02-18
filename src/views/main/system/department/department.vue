@@ -1,11 +1,11 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import pageSearch from '@/components/page-search'
+import PageSearch from '@/components/page-search'
 import { searchFormConfig } from './config/search.config'
-import pageContent from '@/components/page-content'
+import PageContent from '@/components/page-content'
 import { contentTableConfig } from './config/content.config'
 import { usePageSearch } from '@/hooks/use-page-search'
-import pageModal from '@/components/page-modal'
+import PageModal from '@/components/page-modal'
 import { modalConfig } from './config/modal.config'
 import useStore from '@/stores'
 import { usePageModal } from '@/hooks/use-page-modal'
@@ -13,9 +13,9 @@ import { usePageModal } from '@/hooks/use-page-modal'
 export default defineComponent({
   name: 'department',
   components: {
-    pageSearch,
-    pageContent,
-    pageModal
+    PageSearch,
+    PageContent,
+    PageModal
   },
   setup() {
     const { pageContentRef, handleResetClick, handleQueryClick } = usePageSearch()

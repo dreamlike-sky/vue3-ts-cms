@@ -1,5 +1,5 @@
-import userForm from './src/form.vue'
+import UserForm from './src/form.vue'
 
 export * from './types'
 
-export default userForm
+export default UserForm

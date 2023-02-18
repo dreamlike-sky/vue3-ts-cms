@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import baseEchart from '@/base-ui/echart'
+import BaseEchart from '@/base-ui/echart'
 
 const props = defineProps<{
   title?: string
@@ -45,7 +45,7 @@ const option = {
   ]
 }
 */
-const options = computed(() => {
+const options: any = computed(() => {
   return {
     title: { text: props.title },
     tooltip: {

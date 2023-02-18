@@ -1,12 +1,12 @@
 <script lang="ts">
 import { defineComponent, computed, ref, watch } from 'vue'
-import userTable from '@/base-ui/table'
+import UserTable from '@/base-ui/table'
 import systemStore from '@/stores/main/system/system'
 import { usePremissions } from '@/hooks/use-permissions'
 
 export default defineComponent({
   components: {
-    userTable
+    UserTable
   },
   props: {
     contentTableConfig: {
@@ -116,6 +116,7 @@ export default defineComponent({
       v-model:page="pageInfo"
       row-key="id"
       :tree-props="{ children: 'children' }"
+      :propList="contentTableConfig.propList"
     >
       <!-- 数据表头部模块插槽 -->
       <template #header></template>

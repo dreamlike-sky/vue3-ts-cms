@@ -1,11 +1,11 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import editor from '@/base-ui/editor'
+import Editor from '@/base-ui/editor'
 
 export default defineComponent({
   name: 'chat',
   components: {
-    editor
+    Editor
   },
   setup() {
     const htmlString = ref<string>('')

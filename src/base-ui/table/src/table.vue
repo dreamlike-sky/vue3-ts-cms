@@ -64,7 +64,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="user-table">
+  <div class="table">
     <div class="header">
       <slot name="header">
         <div class="title">{{ title }}</div>
@@ -120,7 +120,7 @@ export default defineComponent({
 </template>
 
 <style scoped lang="less">
-.user-table {
+.table {
   padding: 10px 20px;
   background-color: #ffffff;
   border-radius: 5px;
