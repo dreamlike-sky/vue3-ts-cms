@@ -31,16 +31,17 @@
 // export const BASE_NAME = ''
 
 let BASE_URL = ''
-const TIME_OUT = 10000
+const TIME_OUT = 100000
 if (process.env.NODE_ENV === 'development') {
   // BASE_URL = 'http://httpbin.org/get'
   // BASE_URL = 'http://localhost:3000'
-  BASE_URL = '/api'
+  BASE_URL = `${import.meta.env.VITE_BASE_URL}`
 } else if (process.env.NODE_ENV === 'production') {
+  console.log(process.env.NODE_ENV)
   // BASE_URL = 'http://baidu.com/prod'
-  BASE_URL = '/api'
+  BASE_URL = `${import.meta.env.VITE_BASE_URL}`
 } else {
   // BASE_URL = 'http://baidu.com/test'
-  BASE_URL = '/api'
+  BASE_URL = `${import.meta.env.VITE_BASE_URL}`
 }
 export { BASE_URL, TIME_OUT }

@@ -1,6 +1,6 @@
 // import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // 自动导入
@@ -23,7 +23,7 @@ export default defineConfig({
   root: './',
   base: './',
   // 静态资源服务路径，开发环境配置，生产环境需要删除
-  publicDir: resolve('public'),
+  // publicDir: resolve('public'),
   plugins: [
     vue(),
     vueJsx(),
@@ -113,7 +113,7 @@ export default defineConfig({
     // 设置最终构建的浏览器兼容目标：modules(默认)
     target: 'esnext',
     // 指定输出路径(相对于项目根目录)：dist(默认)
-    outDir: './build',
+    outDir: './dist',
     // 构建后是否生成映射文件
     sourcemap: false,
     // 小于此阈值的导入或引用资源将内联为base64编码，以避免额外的http请求：4096(4kb)(默认)
@@ -136,7 +136,7 @@ export default defineConfig({
       }
     },
     // 指定生成静态资源的存放路径(相对于 build.outDir)：assets(默认)
-    assetsDir: 'assets',
+    assetsDir: 'static',
     rollupOptions: {
       output: {
         // 分解大块js,
@@ -144,8 +144,54 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             return id.toString().split('node_modules/')[1].split('/')[0].toString()
           }
-        }
+        },
+        // 用于从入口点创建的块的打包输出格式[name]表示文件名,[hash]表示该文件内容hash值
+        entryFileNames: 'static/js/[name].[hash].js',
+        // 用于命名代码拆分时创建的共享块的输出命名
+        chunkFileNames: 'static/js/[name].[hash].js',
+        // 用于输出静态资源的命名，[ext]表示文件扩展名
+        assetFileNames: 'static/[ext]/[name].[hash].[ext]'
       }
     }
+  },
+  optimizeDeps: {
+    include: [
+      'vue',
+      'element-plus/es',
+      'element-plus/es/components/form/style/index',
+      'element-plus/es/components/radio-group/style/index',
+      'element-plus/es/components/radio/style/index',
+      'element-plus/es/components/checkbox/style/index',
+      'element-plus/es/components/checkbox-group/style/index',
+      'element-plus/es/components/switch/style/index',
+      'element-plus/es/components/time-picker/style/index',
+      'element-plus/es/components/date-picker/style/index',
+      'element-plus/es/components/col/style/index',
+      'element-plus/es/components/form-item/style/index',
+      'element-plus/es/components/alert/style/index',
+      'element-plus/es/components/breadcrumb/style/index',
+      'element-plus/es/components/select/style/index',
+      'element-plus/es/components/input/style/index',
+      'element-plus/es/components/breadcrumb-item/style/index',
+      'element-plus/es/components/tag/style/index',
+      'element-plus/es/components/pagination/style/index',
+      'element-plus/es/components/table/style/index',
+      'element-plus/es/components/table-column/style/index',
+      'element-plus/es/components/card/style/index',
+      'element-plus/es/components/row/style/index',
+      'element-plus/es/components/dialog/style/index',
+      'element-plus/es/components/button/style/index',
+      'element-plus/es/components/menu/style/index',
+      'element-plus/es/components/sub-menu/style/index',
+      'element-plus/es/components/menu-item/style/index',
+      'element-plus/es/components/option/style/index',
+      'element-plus/es/components/empty/style/index',
+      '@element-plus/icons-vue',
+      'element-plus/es/components/upload/style/index',
+      'pinia',
+      'axios',
+      'vue-router',
+      '@vueuse/core'
+    ]
   }
 })
