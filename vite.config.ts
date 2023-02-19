@@ -136,7 +136,7 @@ export default defineConfig({
       }
     },
     // 指定生成静态资源的存放路径(相对于 build.outDir)：assets(默认)
-    assetsDir: 'static',
+    // assetsDir: 'static',
     rollupOptions: {
       output: {
         // 分解大块js,
@@ -146,11 +146,11 @@ export default defineConfig({
           }
         },
         // 用于从入口点创建的块的打包输出格式[name]表示文件名,[hash]表示该文件内容hash值
-        entryFileNames: 'static/js/[name].[hash].js',
+        entryFileNames: 'js/[name].[hash].js',
         // 用于命名代码拆分时创建的共享块的输出命名
-        chunkFileNames: 'static/js/[name].[hash].js',
+        chunkFileNames: 'js/[name].[hash].js',
         // 用于输出静态资源的命名，[ext]表示文件扩展名
-        assetFileNames: 'static/[ext]/[name].[hash].[ext]'
+        assetFileNames: '[ext]/[name].[hash].[ext]'
       }
     }
   },
