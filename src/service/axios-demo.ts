@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 
 // axios 的实例对象
 // axios.request({
@@ -94,29 +94,29 @@ import axios from 'axios'
 // fn1：请求发送成功会执行的函数
 // fn2：请求发送失败会执行的函数
 // axios.interceptors.request.use(fn1, fn2)
-axios.interceptors.request.use(
-  (config) => {
-    // 可以在这里做一些想做的操作
-    // 1.给请求添加 token
-    // 2.添加 Loading 动画
-    console.log('请求成功的拦截')
-    config.url = ''
-    return config
-  },
-  (err) => {
-    console.log('请求失败的拦截')
-    return err
-  }
-)
-// fn1：响应成功(服务器正常返回数据 2xx)
-// fn2：响应失败(服务器返回数据异常 4xx 5xx)
-axios.interceptors.response.use(
-  (res) => {
-    console.log('响应成功的拦截')
-    return res
-  },
-  (err) => {
-    console.log('响应失败的拦截')
-    return err
-  }
-)
+// axios.interceptors.request.use(
+//   (config) => {
+//     // 可以在这里做一些想做的操作
+//     // 1.给请求添加 token
+//     // 2.添加 Loading 动画
+//     console.log('请求成功的拦截')
+//     config.url = ''
+//     return config
+//   },
+//   (err) => {
+//     console.log('请求失败的拦截')
+//     return err
+//   }
+// )
+// // fn1：响应成功(服务器正常返回数据 2xx)
+// // fn2：响应失败(服务器返回数据异常 4xx 5xx)
+// axios.interceptors.response.use(
+//   (res) => {
+//     console.log('响应成功的拦截')
+//     return res
+//   },
+//   (err) => {
+//     console.log('响应失败的拦截')
+//     return err
+//   }
+// )

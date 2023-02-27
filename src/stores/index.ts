@@ -92,7 +92,7 @@ const useStore = defineStore('root', {
     // loginModule.loadLocalLogin()
     // const systemModule = systemStore()
     return {
-      // name: 'coderwhy',
+      name: '',
       // age: 18,
       entireDepartment: [],
       entireRole: [],

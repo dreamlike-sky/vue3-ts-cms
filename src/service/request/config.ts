@@ -13,35 +13,25 @@
 // 生产环境：production
 // 测试环境：test
 // let BASE_URL = ''
-// let BASE_NAME = ''
+// const TIME_OUT = 10000
 // if (process.env.NODE_ENV === 'development') {
-//   BASE_URL = 'http://baidu.com/dev'
+// if (import.meta.env.VITE_BASE_NAME === 'development') {
+//   BASE_URL = 'http://152.136.185.210:5000/'
 //   BASE_NAME = 'DEVELOPMENT'
 // } else if (process.env.NODE_ENV === 'production') {
-//   BASE_URL = 'http://baidu.com/prod'
+// } else if (import.meta.env.VITE_BASE_NAME === 'production') {
+//   BASE_URL = 'http://152.136.185.210:5000/'
 //   BASE_NAME = 'PRODUCTION'
 // } else {
-//   BASE_URL = 'http://baidu.com/test'
+//   BASE_URL = 'http://152.136.185.210:5000/'
 //   BASE_NAME = 'TEST'
 // }
-// export { BASE_URL, BASE_NAME }
+// export { BASE_URL, TIME_OUT }
 // export BASE_URL // 这种写法是报错的
-// export BASE_NAME // 这种写法是报错的
 // 或者可以这样写，在定义的时候就直接导出
-// export const BASE_NAME = ''
+// export const TIME_OUT = 10000
 
-let BASE_URL = ''
-const TIME_OUT = 100000
-if (process.env.NODE_ENV === 'development') {
-  // BASE_URL = 'http://httpbin.org/get'
-  // BASE_URL = 'http://localhost:3000'
-  BASE_URL = `${import.meta.env.VITE_BASE_URL}`
-} else if (process.env.NODE_ENV === 'production') {
-  console.log(process.env.NODE_ENV)
-  // BASE_URL = 'http://baidu.com/prod'
-  BASE_URL = `${import.meta.env.VITE_BASE_URL}`
-} else {
-  // BASE_URL = 'http://baidu.com/test'
-  BASE_URL = `${import.meta.env.VITE_BASE_URL}`
-}
-export { BASE_URL, TIME_OUT }
+// 3.根据配置文件 .env 来区分
+// Vite 项目需要将 process.env 更换为 import.meta.env
+export const BASE_URL = import.meta.env.VITE_BASE_URL
+export const TIME_OUT = 10000

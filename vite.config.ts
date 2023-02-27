@@ -1,6 +1,7 @@
 // import { fileURLToPath, URL } from 'node:url'
+// import { defineConfig, loadEnv } from 'vite'
 
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // 自动导入
@@ -110,8 +111,8 @@ export default defineConfig({
   },
   // 打包配置
   build: {
-    // 设置最终构建的浏览器兼容目标：modules(默认)
-    target: 'esnext',
+    // 设置最终构建的浏览器兼容目标：modules,esnext(默认)
+    target: 'modules',
     // 指定输出路径(相对于项目根目录)：dist(默认)
     outDir: './dist',
     // 构建后是否生成映射文件
@@ -126,7 +127,7 @@ export default defineConfig({
     terserOptions: {
       //打包后移除console和注释
       compress: {
-        drop_console: true,
+        drop_console: false,
         drop_debugger: true,
         pure_funcs: ['console.log']
       },

@@ -36,7 +36,7 @@ export default defineComponent({
 
 <template>
   <div class="login-panel">
-    <h1 class="title">角色管理系统</h1>
+    <h1 class="title">角色权限分配系统</h1>
     <el-tabs type="border-card" class="demo-tabs" stretch v-model="currentTab">
       <el-tab-pane name="account">
         <template #label>

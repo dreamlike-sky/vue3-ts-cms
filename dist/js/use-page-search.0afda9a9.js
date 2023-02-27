@@ -1,0 +1,1 @@
+import{d as e}from"./@vue.962d419f.js";function a(){const a=e();return{pageContentRef:a,handleResetClick:()=>{var e;null==(e=a.value)||e.getPageData()},handleQueryClick:e=>{var t;null==(t=a.value)||t.getPageData(e)}}}export{a as u};

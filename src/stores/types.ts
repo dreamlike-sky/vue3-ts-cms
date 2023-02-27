@@ -22,7 +22,7 @@ export type IStoreType = IRootState & IRootWithLogin
 
 // Pinia
 export interface IRootState {
-  // name: string
+  name: string
   // age: number
   entireDepartment: any[]
   entireRole: any[]

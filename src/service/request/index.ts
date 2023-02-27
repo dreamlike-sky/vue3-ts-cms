@@ -46,9 +46,11 @@ class ServiceRequest {
         // console.log('所有的实例都有的拦截器：请求成功拦截')
         if (this.showLoading) {
           this.loading = ElLoading.service({
-            lock: true, // 蒙版
+            // lock: true, // 蒙版
             text: '正在加载...', // 显示文字
-            background: 'rgba(0, 0, 0, 0.5)' // 遮盖的背景颜色
+            background: 'rgba(0, 0, 0, 0.5)', // 遮盖的背景颜色
+            fullscreen: true,
+            body: true
           })
         }
         return config
