@@ -125,7 +125,7 @@ export default defineConfig({
   // 打包配置
   build: {
     // 设置最终构建的浏览器兼容目标：modules,esnext(默认)
-    target: 'modules',
+    target: 'esnext',
     // 指定输出路径(相对于项目根目录)：dist(默认)
     outDir: './dist',
     // 构建后是否生成映射文件
