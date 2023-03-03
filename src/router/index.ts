@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import localcache from '@/utils/cache'
 import { fistMenu } from '@/utils/map-menus'
@@ -29,7 +29,7 @@ const routes: RouteRecordRaw[] = [
 const router = createRouter({
   routes,
   // history: createWebHistory(import.meta.env.BASE_URL)
-  history: createWebHistory()
+  history: createWebHashHistory()
   // routes: [
   //   {
   //     path: '/',
