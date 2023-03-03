@@ -101,7 +101,7 @@ export default defineConfig({
   // 开启 server 服务
   server: {
     // 设置服务启动端口号，如果端口已经被使用，Vite 会自动尝试下一个可用的端口
-    port: 8080,
+    port: 80,
     // 设为 true 时若端口已被占用则会直接退出，而不是尝试下一个可用端口
     strictPort: true,
     // boolean | string 设置服务启动时是否自动打开浏览器，当此值为字符串时，会被用作 URL 的路径名
