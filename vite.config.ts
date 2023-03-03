@@ -15,7 +15,7 @@ import Icons from 'unplugin-icons/vite'
 // 导入自动导入图标时需要的方法
 import IconsResolver from 'unplugin-icons/resolver'
 // CDN 导入 ElementPlus 样式
-// import { autoComplete, Plugin as importToCDN } from 'vite-plugin-cdn-import'
+import { autoComplete, Plugin as importToCDN } from 'vite-plugin-cdn-import'
 
 import { resolve as _resolve } from 'path'
 const resolve = (p: string) => _resolve(__dirname, p)
@@ -70,18 +70,18 @@ export default defineConfig({
     Icons({
       // 检测到使用时自动安装图标源程序包
       autoInstall: true
+    }),
+    importToCDN({
+      modules: [
+        autoComplete('vue'),
+        {
+          name: 'element-plus',
+          var: 'ElementPlus',
+          path: 'https://unpkg.com/element-plus@2.2.30/dist/index.full.js',
+          css: 'https://unpkg.com/element-plus@2.2.30/dist/index.css'
+        }
+      ]
     })
-    // importToCDN({
-    //   modules: [
-    //     autoComplete('vue'),
-    //     {
-    //       name: 'element-plus',
-    //       var: 'ElementPlus',
-    //       path: 'https://unpkg.com/element-plus@2.2.30/dist/index.full.js',
-    //       css: 'https://unpkg.com/element-plus@2.2.30/dist/index.css'
-    //     }
-    //   ]
-    // })
   ],
   resolve: {
     // 设置文件系统路径的别名
