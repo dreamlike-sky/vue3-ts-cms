@@ -131,7 +131,7 @@ export default defineConfig({
     // 构建后是否生成映射文件
     sourcemap: false,
     // 小于此阈值的导入或引用资源将内联为base64编码，以避免额外的http请求：4096(4kb)(默认)
-    assetsInlineLimit: 4096,
+    // assetsInlineLimit: 4096,
     // 规定触发警告的chunk大小(以 kbs 为单位)：500
     chunkSizeWarningLimit: 1000,
     // Vite2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效
@@ -140,7 +140,7 @@ export default defineConfig({
     terserOptions: {
       //打包后移除console和注释
       compress: {
-        drop_console: false,
+        drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log']
       },
@@ -167,45 +167,45 @@ export default defineConfig({
         assetFileNames: '[ext]/[name].[hash].[ext]'
       }
     }
-  },
-  optimizeDeps: {
-    include: [
-      'vue',
-      'element-plus/es',
-      'element-plus/es/components/form/style/index',
-      'element-plus/es/components/radio-group/style/index',
-      'element-plus/es/components/radio/style/index',
-      'element-plus/es/components/checkbox/style/index',
-      'element-plus/es/components/checkbox-group/style/index',
-      'element-plus/es/components/switch/style/index',
-      'element-plus/es/components/time-picker/style/index',
-      'element-plus/es/components/date-picker/style/index',
-      'element-plus/es/components/col/style/index',
-      'element-plus/es/components/form-item/style/index',
-      'element-plus/es/components/alert/style/index',
-      'element-plus/es/components/breadcrumb/style/index',
-      'element-plus/es/components/select/style/index',
-      'element-plus/es/components/input/style/index',
-      'element-plus/es/components/breadcrumb-item/style/index',
-      'element-plus/es/components/tag/style/index',
-      'element-plus/es/components/pagination/style/index',
-      'element-plus/es/components/table/style/index',
-      'element-plus/es/components/table-column/style/index',
-      'element-plus/es/components/card/style/index',
-      'element-plus/es/components/row/style/index',
-      'element-plus/es/components/dialog/style/index',
-      'element-plus/es/components/button/style/index',
-      'element-plus/es/components/menu/style/index',
-      'element-plus/es/components/sub-menu/style/index',
-      'element-plus/es/components/menu-item/style/index',
-      'element-plus/es/components/option/style/index',
-      'element-plus/es/components/empty/style/index',
-      '@element-plus/icons-vue',
-      'element-plus/es/components/upload/style/index',
-      'pinia',
-      'axios',
-      'vue-router',
-      '@vueuse/core'
-    ]
   }
+  // optimizeDeps: {
+  //   include: [
+  //     'vue',
+  //     'element-plus/es',
+  //     'element-plus/es/components/form/style/index',
+  //     'element-plus/es/components/radio-group/style/index',
+  //     'element-plus/es/components/radio/style/index',
+  //     'element-plus/es/components/checkbox/style/index',
+  //     'element-plus/es/components/checkbox-group/style/index',
+  //     'element-plus/es/components/switch/style/index',
+  //     'element-plus/es/components/time-picker/style/index',
+  //     'element-plus/es/components/date-picker/style/index',
+  //     'element-plus/es/components/col/style/index',
+  //     'element-plus/es/components/form-item/style/index',
+  //     'element-plus/es/components/alert/style/index',
+  //     'element-plus/es/components/breadcrumb/style/index',
+  //     'element-plus/es/components/select/style/index',
+  //     'element-plus/es/components/input/style/index',
+  //     'element-plus/es/components/breadcrumb-item/style/index',
+  //     'element-plus/es/components/tag/style/index',
+  //     'element-plus/es/components/pagination/style/index',
+  //     'element-plus/es/components/table/style/index',
+  //     'element-plus/es/components/table-column/style/index',
+  //     'element-plus/es/components/card/style/index',
+  //     'element-plus/es/components/row/style/index',
+  //     'element-plus/es/components/dialog/style/index',
+  //     'element-plus/es/components/button/style/index',
+  //     'element-plus/es/components/menu/style/index',
+  //     'element-plus/es/components/sub-menu/style/index',
+  //     'element-plus/es/components/menu-item/style/index',
+  //     'element-plus/es/components/option/style/index',
+  //     'element-plus/es/components/empty/style/index',
+  //     '@element-plus/icons-vue',
+  //     'element-plus/es/components/upload/style/index',
+  //     'pinia',
+  //     'axios',
+  //     'vue-router',
+  //     '@vueuse/core'
+  //   ]
+  // }
 })
